@@ -1,0 +1,38 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}
+
+#header-title {
+    text-align: center;
+    font-size: 200%;
+    text-decoration: underline;
+}
+
+.introduction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6%;
+}
+
+
+form {
+    background-color: rgb(182, 118, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+
+    border-radius: 5%;
+}
+
+form input {
+    border-radius: 5px;
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
+}

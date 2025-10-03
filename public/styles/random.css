@@ -1,0 +1,65 @@
+:root {
+    --body-background-color: rgb(26, 26, 26);
+    --menu-bar-background-c0lor: rgba(0, 0, 0, 0.9);
+    --nav-opacity: 1;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin: 0; 
+    padding: 0;
+}
+
+
+#website-frame {
+    width: 100vw;
+    height: calc(100vh - 100px);
+    border: none;
+}
+
+
+header {
+    background-color: rgba(0, 0, 0, var(--nav-opacity, 0.9));
+    font-size: large;
+
+    width: 100svw;
+    height: 100px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*push items oppoite end */
+}
+
+#daze-options {
+    padding: 0 40px;
+}
+
+#ad-banner {
+    background-color: rgb(228, 166, 166);
+    border-radius: 10%;
+    padding: 1%;
+}
+
+#daze-image {
+    width: 80px;
+    cursor: pointer;
+}
+
+#daze-image:hover {
+    animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

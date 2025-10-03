@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel='stylesheet' href="./styles/random.css">
+    <link rel='stylesheet' href="./styles/optionMenu.css">
+    <link rel="stylesheet" href="./styles/menuButton.css">
+    <link rel="stylesheet" href="./styles/categories.css">
+    
+</head>
+<body>
+    <div id="daze-menu-container">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#" id="remove-banner">Remove banner</a></li>
+            <li><a id="category-button" style="cursor: pointer;">Categories</a></li>
+            <li><a href="/suggest">Suggest a site</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </div>
+
+    <%- include('./global/global') %>
+
+    
+    <div id="daze-menu-button">≡</div>
+
+    <div>
+        <header>
+            <div id="ad-banner">
+                ad banner
+            </div>
+            
+            <div id="daze-options">
+                <a><img id="daze-image" src="./images/Daze.PNG"></a>
+            </div>
+        </header>
+    </div>
+
+
+    <iframe id="website-frame"></iframe>
+        
+    
+    <script type="module" src="./javascripts/randomURL.js"></script>
+    <script type="module" src="./javascripts/optionsMenu.js"></script>
+    <script type="module" src="./javascripts/category.js"></script>
+    <script type="module" src="./javascripts/query.js"></script>
+    <script type="module" src="./javascripts/global.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/menuButton.css">
+    <link rel="stylesheet" href="./styles/optionMenu.css">
+    <link rel="stylesheet" href="./styles/suggest.css">
+    <link rel="stylesheet" href="./styles/categories.css">
+
+</head>
+<body>
+    <div id="daze-menu-container">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a id="category-button" style="cursor: pointer;">Categories</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </div>
+
+    <%- include('./global/global') %>
+
+
+    <div id="daze-menu-button">≡</div>
+
+    <div class="main-container">
+        <div id="daze-button">
+            <a href="/random"><img id="daze-image" src="./images/Daze.PNG"></a>
+        </div>
+
+        <div class="introduction-container">
+            <p id="header-title">Want to share a fun site to help bypass time?</p>
+            <form action="/suggest" method="POST">
+                <input id="url-input" type="text" name="url" placeholder="Enter URL here..." required>
+                <input id="description-input" type="text" name="description" placeholder="Enter a short description..." required>
+                <input id="email-input" type="email" name="email" placeholder="Enter your email" required>    
+                <button id="submit-button" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="./javascripts/randomURL.js"></script>
+    <script type="module" src="./javascripts/optionsMenu.js"></script>
+    <script type="module" src="./javascripts/category.js"></script>
+    <script type="module" src="./javascripts/query.js"></script>
+    <script type="module" src="./javascripts/global.js"></script>
+
+</html>

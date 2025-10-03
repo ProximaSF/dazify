@@ -1,0 +1,41 @@
+
+
+:root {
+    --menu-initial-pos: -30%;
+}
+
+ul {
+    padding: 0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+}
+
+li {
+    background-color: rgb(241, 124, 27);
+    padding: 10px;
+    border: 1px solid black;
+}
+
+
+#daze-menu-container {
+    position: absolute;
+    top: var(--menu-initial-pos);
+    transition: top 0.5s ease-out;
+    
+    z-index: 1000;
+    right: 0%;
+    width: fit-content;
+}
+
+
+
+a {
+    color:rgb(126, 58, 18);
+}
+a:hover {
+    text-decoration: underline;
+    color: black;
+}
