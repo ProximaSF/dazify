@@ -3,8 +3,13 @@ const simulation_query_button = document.getElementById('simulation-query');
 const puzzle_query_button = document.getElementById('puzzle-query');
 const music_query_button = document.getElementById('music-query');
 const art_query_button = document.getElementById('art-query');
+const dumb_fun_query_button = document.getElementById('dumb fun-query');
+const reading_query_button = document.getElementById('reading-query');
+const educational_query_button = document.getElementById('educational-query');
+
 const all_query_button = document.getElementById('all-query');
-const all_buttons = [game_query_button, simulation_query_button, puzzle_query_button, music_query_button, art_query_button, all_query_button];
+
+const all_buttons = [game_query_button, simulation_query_button, puzzle_query_button, music_query_button, art_query_button, dumb_fun_query_button, reading_query_button, educational_query_button, all_query_button];
 
 const website_frame = document.getElementById("website-frame");
 
