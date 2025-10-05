@@ -13,7 +13,10 @@ insert ignore into urls (url) values
   ('https://www.nytimes.com/games/wordle/index.html'),
   ('http://radio.garden/'),
   ('https://flappy-2048.com/'),
-  ('https://www.worldsdumbestgame.com/')
+  ('https://www.worldsdumbestgame.com/'),
+  ('https://www.anothersadtrombone.com/'),
+  ('https://www.polkadotgame.com/'),
+  ('https://www.faceguesser.com/');
     
 
 insert ignore into categories (category_name) values
@@ -23,7 +26,8 @@ insert ignore into categories (category_name) values
     ("Puzzle"),
     ("Dumb Fun"),
     ('Reading'),
-    ('Educational');
+    ('Educational'),
+    ('Sound');
     
     
 -- Step 1: Get the ID for 'maze.toys' and store it in a variable.
@@ -37,7 +41,8 @@ INSERT IGNORE INTO url_categories (url_id, category_id) VALUES
 -- 'voicechanger.io'
 SET @voicechanger_id = (SELECT url_id FROM urls WHERE url = 'https://voicechanger.io/');
 INSERT IGNORE INTO url_categories (url_id, category_id) VALUES
-    (@voicechanger_id, (SELECT category_id FROM categories WHERE category_name = 'Simulation'));
+    (@voicechanger_id, (SELECT category_id FROM categories WHERE category_name = 'Simulation')),
+    (@voicechanger_id, (SELECT category_id FROM categories WHERE category_name = 'Sound'));
 
 -- '2020game.io'
 SET @2020game_id = (SELECT url_id FROM urls WHERE url = 'https://2020game.io/');
@@ -56,7 +61,8 @@ SET @invisible_cow_id = (SELECT url_id FROM urls WHERE url = 'https://findtheinv
 INSERT IGNORE INTO url_categories (url_id, category_id) VALUES
     (@invisible_cow_id, (SELECT category_id FROM categories WHERE category_name = 'Game')),
     (@invisible_cow_id, (SELECT category_id FROM categories WHERE category_name = 'Puzzle')),
-    (@invisible_cow_id, (SELECT category_id FROM categories WHERE category_name = 'Dumb Fun'));
+    (@invisible_cow_id, (SELECT category_id FROM categories WHERE category_name = 'Dumb Fun')),
+    (@invisible_cow_id, (SELECT category_id FROM categories WHERE category_name = 'Sound'));
 
 -- 'https://longdogechallenge.com/'
 SET @longdoge_id = (SELECT url_id FROM urls WHERE url = 'https://longdogechallenge.com/');
@@ -109,3 +115,21 @@ SET @worldsdumbestgame_id = (SELECT url_id FROM urls WHERE url = 'https://www.wo
 INSERT IGNORE INTO url_categories (url_id, category_id) VALUES
     (@worldsdumbestgame_id, (SELECT category_id FROM categories WHERE category_name = 'Dumb Fun'));
 
+-- 'https://www.polkadotgame.com/'
+SET @polkadotgame_id = (SELECT url_id FROM urls WHERE url = 'https://www.polkadotgame.com/');
+INSERT IGNORE INTO url_categories (url_id, category_id) VALUES
+    (@polkadotgame_id, (SELECT category_id FROM categories WHERE category_name = 'Game'));
+
+-- 'https://www.anothersadtrombone.com/'
+SET @anothersadtrombone_id = (SELECT url_id FROM urls WHERE url = 'https://www.anothersadtrombone.com/');
+INSERT IGNORE INTO url_categories (url_id, category_id) VALUES
+    (@anothersadtrombone_id, (SELECT category_id FROM categories WHERE category_name = 'Dumb Fun'));
+
+-- 'https://www.faceguesser.com/'
+SET @faceguesser_id = (SELECT url_id FROM urls WHERE url = 'https://www.faceguesser.com/');
+INSERT IGNORE INTO url_categories (url_id, category_id) VALUES  
+    (@faceguesser_id, (SELECT category_id FROM categories WHERE category_name = 'Game')),
+    (@faceguesser_id, (SELECT category_id FROM categories WHERE category_name = 'Puzzle')),
+    (@faceguesser_id, (SELECT category_id FROM categories WHERE category_name = 'Educational'));
+
+    

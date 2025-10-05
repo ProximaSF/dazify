@@ -3,7 +3,7 @@ const category_container = document.querySelector('.website-types-container');
 
 if (category_button) {
     category_button.addEventListener('click', function() {
-        console.log(category_container)
+        //console.log(category_container)
         category_container.style.display = 'flex'
 
     })

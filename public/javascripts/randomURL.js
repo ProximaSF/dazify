@@ -5,6 +5,7 @@ if (document.readyState === "loading") {
     loadRandomSite();
 }
 
+
 // Load a random site into the iframe
 const website_frame = document.getElementById("website-frame");
 function loadRandomSite() {

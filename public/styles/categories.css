@@ -11,8 +11,6 @@
     align-items: center;
 }
 
-
-
 .category-menu {
     background-color: orange;
     border-radius: 15px;
@@ -52,4 +50,21 @@ li {
     display: none;
 }
 
+
+#footer {
+    background-color: rgb(241, 124, 27);
+    color: black;
+
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+
+    position: fixed;
+    display: none;
+}
+
+#footer a:hover {
+    color: black;
+}
 

@@ -6,11 +6,11 @@ function moveMenu(value) {
     document.documentElement.style.setProperty('--menu-initial-pos', value);
 }
 
-// Event listeners for menu interactions
+// Evebt listeners for menu interactions
 if (option_buttons) {
     option_buttons.addEventListener("click", function() {
-        console.log("Option button clicked");
-        console.log(getComputedStyle(document.documentElement).getPropertyValue('--menu-left'));
+        //console.log("Option button clicked");
+        //console.log(getComputedStyle(document.documentElement).getPropertyValue('--menu-left'));
         moveMenu('0%');
     });
 }

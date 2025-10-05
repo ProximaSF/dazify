@@ -2,22 +2,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5%;
+    margin-top: 1%;
 }
 
 #header-title {
     text-align: center;
     font-size: 200%;
-    text-decoration: underline;
 }
 
 .introduction-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 6%;
+    margin: 15%;
 }
-
 
 form {
     background-color: rgb(182, 118, 0);
