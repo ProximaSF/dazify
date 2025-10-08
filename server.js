@@ -17,8 +17,8 @@ try {
         user: process.env.MYSQL_USER,
         password: process.env.MYSQL_PASSWORD,
         database: process.env.MYSQL_DATABASE,
-        connectionLimite: 10,
-        queueLimit: 0
+        //connectionLimite: 10,
+        //queueLimit: 0
     })
 } catch (error) {
     console.log('Error creating database', error)
