@@ -1,3 +1,5 @@
+use daze_random_sites_db;
+
 SELECT urls.url, categories.category_name
 	from urls
 join url_categories 

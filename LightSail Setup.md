@@ -123,3 +123,13 @@ npm install dotenv
 ```
 
 
+
+
+###  Debug
+
+1. Check for server errors:
+	```bash
+	pm2 logs server --lines 200
+	```
+
+2. 
