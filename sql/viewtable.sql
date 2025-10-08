@@ -1,4 +1,3 @@
-
 SELECT urls.url, categories.category_name, categories.category_id
 FROM
     url_categories uc
