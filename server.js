@@ -15,7 +15,7 @@ try {
     pool = mysql.createPool({
         host: process.env.MYSQL_HOST,
         user: process.env.MYSQL_USER,
-        password: 'Honky@101',
+        password: process.env.MYSQL_PASSWORD,
         database: process.env.MYSQL_DATABASE,
         connectionLimite: 10,
         queueLimit: 0
