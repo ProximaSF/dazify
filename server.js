@@ -2,7 +2,7 @@
 const express = require('express')
 const app = express()
 
-app.set('view engin', 'ejs')
+app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended: false})) // allow the access of value in app.post() by user
 app.use(express.static('public'))
 
@@ -20,6 +20,9 @@ try {
         connectionLimit: 10,
         queueLimit: 0
     })
+
+    console.log('MySQL connection pool created successfully');
+
 } catch (error) {
     console.log('Error creating database', error)
 }
@@ -75,6 +78,9 @@ app.get('/about', (req, res) => {
 })
 
 const PORT = 3000
-app.listen(PORT, '127.0.0.1', () => { // Ensure only the hhttp domain work not the public IP one also
+// 127.0.0.1 is localhost (for testing only)
+app.listen(PORT, '0.0.0.0', () => { // Ensure only the hhttp domain work not the public IP one also
 })
+
+// 0.0.0.0 will listen on all available interfaces, including public IP address (for deployment)
 
