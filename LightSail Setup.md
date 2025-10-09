@@ -40,6 +40,7 @@ curl -I http://127.0.0.1
 
 #### Step 4: Open http and https port so server is reachable
 ```bash
+sudo apt install ufw
 sudo ufw allow OpenSSH       # keep SSH access else wont able to access server
 sudo ufw allow 'Nginx Full'
 ```
@@ -64,7 +65,8 @@ Server config setup
 ```txt
 server {
   listen 80;
-  server_name yourdomain.com;
+  listen [::]:80;
+  server_name 13.123.123.12;
 
   location / {
     proxy_pass http://127.0.0.1:3000;
@@ -76,8 +78,62 @@ server {
   }
 }
 ```
-- If there is no domain name yet, replace `serveer_name` field with _
+- If there is no domain name yet, replace `server_name` field with _
 	- It will match and connect all catch requests
+
+
+Check for syntax error in conf:
+```bash
+sudo nginx -t
+```
+
+##### Step 5.1: Setup SSL for HTTPS Connection (must have domain name first) 
+
+Using Let's Encrypt for Nginx
+```bash
+sudo apt update
+```
+
+Install Certbot (Let's Encrypt client for Nginx)
+```bash
+sudo apt install -y certbot python3-certbot-nginx
+```
+
+Reconfig server file
+```bash
+sudo nano /etc/nginx/sites-available/dazify.conf
+```
+
+Add:
+```conf
+server {
+  listen 443 ssl;
+  server_name dazify.xyz www.dazify.xyz;
+  root /var/www/html;
+
+  location / {
+    proxy_pass http://127.0.0.1:3000;
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+}
+```
+- Change `server_name`, and add `root` field
+
+
+**Run Certbot to Get SSL Certificate**
+```bash
+sudo certbot --nginx -d dazify.xyz -d www.dazify.xyz
+```
+
+
+Auto Renew Certificate:
+```bash
+sudo certbot renew --dry-run
+```
 
 Check for syntax error:
 ```bash
@@ -118,6 +174,7 @@ Make sure inside of site package
 npm install ejs
 npm install nodemon
 npm install dotenv
+npm install express
 
 ...
 ```

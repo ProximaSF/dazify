@@ -78,9 +78,10 @@ app.get('/about', (req, res) => {
 })
 
 const PORT = 3000
+const HOST = '0.0.0.0'
 // 127.0.0.1 is localhost (for testing only)
-app.listen(PORT, '0.0.0.0', () => { // Ensure only the hhttp domain work not the public IP one also
+app.listen(PORT, HOST, () => { // Ensure only the hhttp domain work not the public IP one also
 })
 
 // 0.0.0.0 will listen on all available interfaces, including public IP address (for deployment)
-
+//awd
