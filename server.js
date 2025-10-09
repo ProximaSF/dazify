@@ -10,31 +10,22 @@ app.use(express.static('public'))
 const mysql = require('mysql2/promise')
 require('dotenv').config()
 
-let pool;
 
-(async () => {
-  try {
-    pool = await mysql.createPool({
-      host: process.env.MYSQL_HOST,
-      user: process.env.MYSQL_USER,
-      password: process.env.MYSQL_PASSWORD,
-      database: process.env.MYSQL_DATABASE,
-      connectionLimit: 10,
-      queueLimit: 0
-    });
+try {
+    pool = mysql.createPool({
+        host: process.env.MYSQL_HOST,
+        user: process.env.MYSQL_USER,
+        password: process.env.MYSQL_PASSWORD,
+        database: process.env.MYSQL_DATABASE,
+        connectionLimit: 10,
+        queueLimit: 0
+    })
 
-    console.log('✅ MySQL connection pool created successfully');
+    console.log('MySQL connection pool created successfully');
 
-    const PORT = 3000;
-    app.listen(PORT, '0.0.0.0', () => {
-      console.log(`🚀 Server running on port ${PORT}`);
-    });
-  } catch (error) {
-    console.error('❌ Error creating database pool:', error);
-  }
-})();
-
-
+} catch (error) {
+    console.log('Error creating database', error)
+}
 
 app.get("/api/random", async (req, res) => { 
     const [row] = await pool.query('SELECT * FROM urls ORDER BY RAND() LIMIT 1')
@@ -44,12 +35,6 @@ app.get("/api/random", async (req, res) => {
     } else {
         res.status(404).json({error: 'No sites found'});
     }
-const PORT = 3000;
-
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-});
-
     
 });
 
@@ -92,4 +77,11 @@ app.get('/about', (req, res) => {
     res.render('about.ejs')
 })
 
+const PORT = 3000
+const HOST = '0.0.0.0'
+// 127.0.0.1 is localhost (for testing only)
+app.listen(PORT, HOST, () => { // Ensure only the hhttp domain work not the public IP one also
+})
 
+// 0.0.0.0 will listen on all available interfaces, including public IP address (for deployment)
+//awd
