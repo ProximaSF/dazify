@@ -211,7 +211,7 @@ Update the `server_name` line to include your domain:
 server {
   listen 80;
   listen [::]:80;
-  server_name dazify.xyz www.dazify.xyz 44.202.179.192;
+  server_name dazify.xyz www.dazify.xyz 123.123.123.123;
 
   location / {
     proxy_pass http://127.0.0.1:3000;
