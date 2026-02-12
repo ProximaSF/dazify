@@ -77,7 +77,7 @@ app.get('/about', (req, res) => {
     res.render('about.ejs')
 })
 
-const PORT = 3000
+const PORT = 3001
 const HOST = '0.0.0.0'
 // 127.0.0.1 is localhost (for testing only)
 app.listen(PORT, HOST, () => { // Ensure only the hhttp domain work not the public IP one also
