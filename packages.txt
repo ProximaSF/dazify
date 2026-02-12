@@ -1,5 +1,0 @@
-httpd
-express
-ejs
-mysql2
-dotenv
